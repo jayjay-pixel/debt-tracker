@@ -1,0 +1,161 @@
+:root {
+  --bg-color: #121212;
+  --surface: #1e1e1e;
+  --primary: #818cf8;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --input-bg: #2d2d2d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Container */
+.card {
+  background: var(--surface);
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Navigation */
+.tabs {
+  display: flex;
+  background: #111;
+  padding: 5px;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.tab-btn.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Form Layout */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.header { margin-bottom: 1.5rem; }
+.header h2 { font-size: 1.4rem; }
+.header p { color: var(--text-muted); font-size: 0.85rem; margin-top: 4px; }
+
+.form-group { margin-bottom: 1.2rem; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.05em;
+}
+
+.helper-text {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Inputs */
+input, select {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: var(--primary);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.input-wrapper input {
+  padding-left: 30px;
+}
+
+/* Buttons */
+.main-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.main-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+input, select, .tab-btn {
+  font-size: 16px; /* Prevents auto-zoom on mobile browsers */
+}
+
+.tab-btn {
+  padding: 14px 10px; /* Thicker buttons are easier for thumbs */
+}
+
+body {
+  min-height: 100dvh; /* Use 'dvh' (dynamic viewport height) for modern mobile support */
+  padding: 10px;    /* Slightly less padding so the card fits better on small screens */
+}
+
+.main-btn:hover:not(:disabled) { opacity: 0.9; }
+.main-btn:active:not(:disabled) { transform: scale(0.98); }
